@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de alumnos</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #334155;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 16px;
+            background-color: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .btn:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Lista de alumnos</h1>
+
+    <a th:href="@{/}" class="btn">Volver al inicio</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Email</th>
+                <th>Teléfono</th>
+                <th>Dirección</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each="alumno : ${alumnos}">
+                <td th:text="${alumno.id}"></td>
+                <td th:text="${alumno.nombre}"></td>
+                <td th:text="${alumno.apellidos}"></td>
+                <td th:text="${alumno.email}"></td>
+                <td th:text="${alumno.telefono}"></td>
+                <td th:text="${alumno.direccion}"></td>
+            </tr>
+
+            <tr th:if="${#lists.isEmpty(alumnos)}">
+                <td colspan="6">No hay alumnos registrados.</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

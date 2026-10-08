@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #1e293b;
+            color: white;
+        }
+
+        .card {
+            padding: 2.5rem;
+            text-align: center;
+            background-color: #334155;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: #cbd5e1;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.9rem 1.5rem;
+            background-color: #3b82f6;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>Alumnos</h1>
+
+        <p>Aplicación web con soporte para MySQL y PostgreSQL.</p>
+
+        <a th:href="@{/alumnos}" class="btn">Ver alumnos</a>
+    </div>
+
+</body>
+</html>
